@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Beranda</title>
+    <!-- Mengimpor file CSS Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Define your custom styles here */
+        tbody tr:nth-child(odd) {
+            background-color: #b7b7d3; /* Light gray background for odd rows */
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #c3323c; /* White background for even rows */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">RESTY INDRIYANI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="About me.html">Tentang saya </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="bukutamu.html">Buku Tamu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Jadwal kuliah.html">Jadwal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="JavaScript.html">Java Script</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Pendidikan.html">Pendidikan </a>
+        </ul>
+    </div>
+</nav>
+<h2>Menghitung Luas Persegi Panjang</h2>
+<button onclick="hitungLuas()">Hitung Luas</button>
+
+<p id="luasPersegiPanjang"></p>
+
+<h2>Memeriksa Angka Positif, Negatif, atau Nol</h2>
+<input type="number" id="angka" placeholder="Masukkan angka">
+<button onclick="cekAngka()">Cek</button>
+
+<p id="hasilPengecekan"></p>
+
+<script>
+    function hitungLuas() {
+        var panjang = parseFloat(prompt("Masukkan panjang persegi panjang:"));
+        var lebar = parseFloat(prompt("Masukkan lebar persegi panjang:"));
+        var luas = panjang * lebar;
+        document.getElementById("luasPersegiPanjang").innerHTML = "Luas Persegi Panjang adalah: " + luas;
+    }
+
+    function cekAngka() {
+        var angka = parseFloat(document.getElementById("angka").value);
+        var pesan = "";
+
+        if (angka > 0) {
+            pesan = "Angka ini adalah positif.";
+        } else if (angka < 0) {
+            pesan = "Angka ini adalah negatif.";
+        } else {
+            pesan = "Angka ini adalah nol.";
+        }
+
+        document.getElementById("hasilPengecekan").innerHTML = pesan;
+    }
+</script>
